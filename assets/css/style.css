@@ -23,6 +23,7 @@ body{
     background-color: orange;
 }
 .status {
+    color:#fff;
     margin: 0 20px;
     padding: 20px;
     border-radius: 10px;

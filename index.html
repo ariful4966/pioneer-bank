@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <div id="login-area">
+    <div id="login-area" class="container">
         <h1 class="text-center bank-title">Welcome to Pionner Bank</h1>
         <div class="submit-area">
             <h4>Login</h4>
@@ -20,8 +20,8 @@
             <button type="submit" class="btn btn-success" id="login">Enter</button>
         </div>
     </div>
-    <div id="transaction-area" class="text-white">
-        <div class="row">
+    <div id="transaction-area" class=" ">
+        <div class="row ">
             <div class="col-md-4">
                 <div class="deposite status">
                     <h5>Deposit</h5>
@@ -38,6 +38,22 @@
                 <div class="balance status">
                     <h5>Balance</h5>
                     <h2>$1240</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-6">
+               <div class="submit-area">
+                    <h4>Deposite</h4>
+                    <input id="depositeAmount" type="text" class="form-control" placeholder="$ Amount you want to deposite"><br>
+                    <botton id="addDeposit"class="btn btn-success">Deposite</botton>
+               </div>
+            </div>
+            <div class="col-md-6">
+                <div class="submit-area">
+                    <h4>Withdow</h4>
+                    <input type="text" class="form-control" placeholder="$ About you want to withdrow"><br>
+                    <botton class="btn btn-success">Withdow</botton>
                 </div>
             </div>
         </div>
