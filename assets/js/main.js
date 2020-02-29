@@ -11,21 +11,41 @@ loginBtn.addEventListener("click", function(){
 // Deposite button Event handler
 const depositeBtn = document.getElementById("addDeposit");
 depositeBtn.addEventListener("click", function(){
-   const depositeAmount = document.getElementById("depositeAmount").value; 
-   const depositeNumber = parseFloat(depositeAmount);
+   const addedNumber =  getInputNumber("depositeAmount");
 
-   const currentDeposit = document.getElementById("currentDeposit").innerText; 
-   const currentDepositNumber = parseFloat(currentDeposit);
-   const totalDeposit = currentDepositNumber + depositeNumber;
 
-   document.getElementById("currentDeposit").innerText = totalDeposit;
    document.getElementById("depositeAmount").value = "";
 
-   const currentBalance = document.getElementById("currentBalance").innerText;
-   const currentBalanceNumber = parseFloat(currentBalance);
-   const totalBalance = currentBalanceNumber + totalDeposit;
-   document.getElementById("currentBalance").innerText = totalBalance;
-
-
+    updateSpanText("currentDeposit" , addedNumber);
+   updateSpanText("currentBalance", addedNumber);
 
 });
+// withdrow Button Event Handler
+const withdrowBtn = document.getElementById("addwithdrow");
+withdrowBtn.addEventListener("click", function(){
+    const withdrowNumber = getInputNumber("withdrowAmount");
+
+    document.getElementById("withdrowAmount").value = "";
+
+    updateSpanText("currentWithdrow", withdrowNumber);
+    updateSpanText("currentBalance", -1 * withdrowNumber);
+
+
+
+    /*const currentBalance = document.getElementById("currentBalance").innerText;
+    const currentBalanceNumber = parseFloat(currentBalance);
+    const availableAmount = currentBalanceNumber - withdrowNumber;
+    document.getElementById("currentBalance").innerText = availableAmount;*/
+});
+function getInputNumber(id){
+    const Amount = document.getElementById(id).value;
+    const amountNumber = parseFloat(Amount);
+    return amountNumber;
+}
+
+function updateSpanText(id, addedNumber){
+    const current = document.getElementById(id).innerText;
+    const currentNumber = parseFloat(current);
+    const totalAmount = currentNumber + addedNumber;
+    document.getElementById(id).innerText = totalAmount;
+}
